@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<style>
+body {
+  align-items: center;
+  background-color: #111;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+}
+
+.container {
+  width:500px;
+  height:350px;
+  position: relative;
+  perspective: 800px;
+}
+
+.post-card {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+  transition: transform 1s;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.post-card:hover {
+  transform: rotateY( 180deg );
+}
+
+.post-card:hover .heart {
+  display: none;
+}
+.post-card figure {
+  margin: 0;
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.post-card .front {
+  align-items: center;
+  background: red;
+  display: flex;
+  justify-content: center;
+  padding: 15px;
+}
+
+.post-card .back {
+  background: #FFF;
+  display: flex;
+  padding: 15px;
+  transform: rotateY( 180deg );
+}
+
+.post-card .back .start {
+  flex: 1;
+  height: 100%;
+}
+.post-card .back .end {
+  flex: 1;
+  height: 100%;
+}
+
+.post-card.flipped {
+  transform: rotateY( 180deg );
+}
+
+.post-card__title {
+  font-family:'La Belle Aurore';
+  font-size: 28px;
+}
+.post-card__content {
+  font-family:'La Belle Aurore';
+  font-size: 15px;
+  line-height: 1.2;
+}
+.post-card__head {
+  justify-content: flex-end;
+  display: flex;
+}
+.post-stample{
+  border:1px solid black;
+  height:100px;
+  margin-bottom: 45px;
+  width:100px;
+}
+
+.adress-line{
+  display:block;
+  margin: 10px 20px;
+  font-family:'La Belle Aurore';
+  border-bottom:1px solid black;
+}
+
+.heart {
+  fill: #FFF;
+  width: 100px;
+  animation: pulse 1s ease infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.3); }
+  100% { transform: scale(1); }
+}
+</style>
+</head>
+<body>
+
+    <section class="container">
+      <div class="post-card">
+
+        <figure class="front">
+          <svg class="heart">
+            <path d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z"/>
+					  <img src="https://quan-inc.jp/admin/wp-content/uploads/2018/09/sugercubs_01-270x270.png">
+          </svg>
+        </figure>
+
+        <figure class="back">
+          <div class="start">
+            <h1 class="post-card__title">Osita💖 </h1>
+            <p class="post-card__content">
+    Aquello que solo se puede plasmar en acciones,lo plasmaré en un recuerdo, y para mi fue aquel día donde te conocí más a fondo caminando por aquella acera del lugar donde nos junto, en la epoca donde aquel árbol de arupo florecia su caracteristico color rosado
+	aquel color con el que se identifica tu suma dulzura, aquel recuerdo sempiterno definio mi amor por ti, amor por el cual nunca deje de sentirlo y que así sea por años y años hasta que volvamos a ver un arupo florecer, para recordarnos nuestro amor Te Amo.
+           </p>
+          </div>
+          <div class="end">
+            <div class="post-card__head">
+              <div class="post-stample"><img src="https://ih1.redbubble.net/image.350475755.5604/flat,128x128,075,t-pad,128x128,f8f8f8.u1.jpg" width="90%"></div>
+            </div>
+            <span class="adress-line">Del: Osito</span>
+            <span class="adress-line">Para: Su Osita</span>
+          </div>
+        </figure>
+
+      </div>
+    </section>
+</body>
+</html>
